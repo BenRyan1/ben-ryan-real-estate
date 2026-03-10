@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deploy Checklist — Ben Ryan Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0d1b2a; --gold:#b8935a; --cream:#f5f0e8; --green:#2a6e3a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Jost',sans-serif; background:var(--cream); color:#1a2b3c; padding:3rem 2rem; max-width:800px; margin:0 auto; }
+
+  h1 { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:400; color:var(--navy); margin-bottom:0.4rem; }
+  .subtitle { font-size:0.8rem; color:#778; letter-spacing:0.1em; margin-bottom:3rem; }
+
+  .phase {
+    margin-bottom:2.5rem;
+    border-left:3px solid var(--gold);
+    padding-left:1.5rem;
+  }
+  .phase-title {
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.4rem; color:var(--navy); margin-bottom:1rem;
+    display:flex; align-items:center; gap:0.8rem;
+  }
+  .phase-num {
+    background:var(--gold); color:var(--navy);
+    width:28px; height:28px; border-radius:50%;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:'Jost',sans-serif; font-size:0.8rem; font-weight:700; flex-shrink:0;
+  }
+
+  .step {
+    display:flex; align-items:flex-start; gap:0.9rem;
+    padding:0.7rem 0; border-bottom:1px solid rgba(0,0,0,0.06);
+  }
+  .step:last-child { border-bottom:none; }
+  .step-check {
+    width:18px; height:18px; border:2px solid var(--gold);
+    border-radius:3px; flex-shrink:0; cursor:pointer; margin-top:1px;
+    transition:all 0.2s;
+  }
+  .step-check.done { background:var(--green); border-color:var(--green); }
+  .step-check.done::after { content:'✓'; display:flex; align-items:center; justify-content:center; height:100%; color:white; font-size:0.7rem; font-weight:700; }
+  .step-text { font-size:0.85rem; line-height:1.6; color:#334; }
+  .step-text strong { color:var(--navy); font-weight:600; }
+  .step-text code {
+    background:#1a2b3c; color:#b8935a; padding:0.1rem 0.4rem;
+    font-size:0.78rem; border-radius:3px; font-family:monospace;
+  }
+  .step-note {
+    font-size:0.72rem; color:#889; margin-top:0.3rem; font-style:italic;
+  }
+
+  .info-box {
+    background:var(--navy); color:var(--cream);
+    padding:1.5rem; margin:1.5rem 0;
+    border-left:3px solid var(--gold);
+  }
+  .info-box-title { font-size:0.7rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:0.6rem; }
+  .info-box p { font-size:0.82rem; line-height:1.7; color:#aab; }
+  .info-box code { color:var(--gold); font-family:monospace; font-size:0.82rem; }
+
+  .vars-table { width:100%; border-collapse:collapse; margin-top:0.8rem; }
+  .vars-table th { font-size:0.65rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); text-align:left; padding:0.4rem 0.6rem; border-bottom:1px solid rgba(184,147,90,0.3); }
+  .vars-table td { font-size:0.8rem; padding:0.5rem 0.6rem; border-bottom:1px solid rgba(255,255,255,0.06); color:#ccd; font-family:monospace; }
+
+  .progress-bar { height:6px; background:#ddd; margin-bottom:2.5rem; border-radius:3px; overflow:hidden; }
+  .progress-fill { height:100%; background:var(--gold); width:0%; transition:width 0.5s; border-radius:3px; }
+  .progress-label { font-size:0.7rem; color:#889; margin-bottom:0.4rem; }
+
+  .done-banner {
+    display:none; background:var(--green); color:white;
+    padding:1.5rem; text-align:center; margin-top:2rem;
+    font-family:'Cormorant Garamond',serif; font-size:1.6rem;
+  }
+
+  @media print {
+    .step-check { print-color-adjust:exact; }
+    .info-box { print-color-adjust:exact; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Deployment Checklist</h1>
+<div class="subtitle">Ben Ryan Real Estate Services · benryanrealestate.com · Complete in order</div>
+
+<div class="progress-label">Progress: <span id="progressText">0 of 22 steps complete</span></div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- PHASE 1 -->
+<div class="phase">
+  <div class="phase-title"><span class="phase-num">1</span> GitHub Repository</div>
+
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Go to github.com</strong> — sign in as BenRyan1 (same account as KCM)
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Click <strong>+ → New repository</strong><br>
+      Name: <code>ben-ryan-real-estate</code> · Visibility: Public · Check "Add README"
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Upload all files</strong> — drag & drop into the repo root:<br>
+      <code>index.html</code> · <code>bpo-order.html</code> · <code>404.html</code> · <code>_headers</code> · <code>_redirects</code> · <code>robots.txt</code> · <code>sitemap.xml</code> · <code>manifest.json</code> · <code>README.md</code>
+      <div class="step-note">Workers folder goes in too — but workers are deployed separately in Cloudflare</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Click <strong>Commit changes</strong> — message: "Initial deploy"
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 2 -->
+<div class="phase">
+  <div class="phase-title"><span class="phase-num">2</span> Cloudflare Pages</div>
+
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Cloudflare Dashboard → <strong>Workers & Pages</strong> → <strong>Create → Pages</strong>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Connect to Git</strong> → Select GitHub → Authorize → Choose <code>ben-ryan-real-estate</code>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Build settings: <strong>Framework = None</strong> · Build command = blank · Output = <code>/</code> → <strong>Save and Deploy</strong>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      After deploy succeeds → <strong>Custom Domains</strong> tab → Add <code>benryanrealestate.com</code>
+      <div class="step-note">DNS will auto-configure if domain is already on Cloudflare</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 3 -->
+<div class="phase">
+  <div class="phase-title"><span class="phase-num">3</span> Domain Registration</div>
+
+  <div class="info-box">
+    <div class="info-box-title">Recommended Domain</div>
+    <p>Register <code>benryanrealestate.com</code> via Cloudflare Registrar (~$9/yr, no markup). This keeps everything in one dashboard. Alternatively: <code>santabarbarabpo.com</code> is an SEO powerhouse for bank discovery.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Cloudflare Dashboard → <strong>Domain Registration</strong> → Search & register <code>benryanrealestate.com</code>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Optional</strong>: Also register <code>santabarbarabpo.com</code> → redirect to main site for SEO juice
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 4 -->
+<div class="phase">
+  <div class="phase-title"><span class="phase-num">4</span> MailerLite Setup</div>
+
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      MailerLite (account 2099860) → <strong>Subscribers → Groups</strong> → Create group: <code>RE General Leads</code> → copy Group ID
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Create second group: <code>BPO Orders</code> → copy Group ID
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      MailerLite → <strong>Integrations → API</strong> → Copy your API key (same key as KCM if desired, or create new)
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 5 -->
+<div class="phase">
+  <div class="phase-title"><span class="phase-num">5</span> Cloudflare Workers</div>
+
+  <div class="info-box">
+    <div class="info-box-title">Environment Variables — Same for Both Workers</div>
+    <table class="vars-table">
+      <tr><th>Variable</th><th>Value</th></tr>
+      <tr><td>MAILERLITE_API_KEY</td><td>[your ML API key]</td></tr>
+      <tr><td>MAILERLITE_GROUP_ID</td><td>[different per worker — see above]</td></tr>
+      <tr><td>NOTIFY_EMAIL</td><td>ben@benryanrealestate.com</td></tr>
+    </table>
+  </div>
+
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Cloudflare → <strong>Workers & Pages → Create Worker</strong> → Name: <code>ben-ryan-contact</code><br>
+      Paste contents of <code>workers/contact-worker.js</code> → Deploy<br>
+      Settings → Variables → Add all 3 vars (use <em>RE General Leads</em> group ID)
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Create second Worker → Name: <code>ben-ryan-bpo-order</code><br>
+      Paste <code>workers/bpo-order-worker.js</code> → Deploy<br>
+      Variables → Add all 3 vars (use <em>BPO Orders</em> group ID)
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      Each Worker → <strong>Triggers → Add Route</strong>:<br>
+      Worker 1: <code>benryanrealestate.com/api/contact</code><br>
+      Worker 2: <code>benryanrealestate.com/api/bpo-order</code>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 6 -->
+<div class="phase">
+  <div class="phase-title"><span class="phase-num">6</span> Analytics & Search</div>
+
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Google Analytics</strong> — Create new GA4 property for benryanrealestate.com → Get Measurement ID (G-XXXXXXXXXX)<br>
+      Replace <code>G-XXXXXXXXXX</code> in both <code>index.html</code> and <code>bpo-order.html</code>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Google Search Console</strong> → Add property <code>benryanrealestate.com</code><br>
+      Verify via Cloudflare DNS TXT record → Submit sitemap: <code>https://benryanrealestate.com/sitemap.xml</code>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Bing Webmaster Tools</strong> → Add site → Verify via BingSiteAuth.xml file in repo root (same process as KCM)
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 7 -->
+<div class="phase">
+  <div class="phase-title"><span class="phase-num">7</span> Final Polish</div>
+
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>NABPOP Certification</strong> → nabpop.org → Enroll in C-REP ($99 one-time)<br>
+      Once certified: edit <code>bpo-order.html</code> → find <code>nabpop-pending</code> div → replace with official badge/number
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Add assets</strong> — Create <code>assets/</code> folder in repo:<br>
+      <code>og-image.jpg</code> (1200×630px, site preview image)<br>
+      <code>icon-192.png</code> and <code>icon-512.png</code> (gold BR monogram on navy)
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-check" onclick="toggle(this)"></div>
+    <div class="step-text">
+      <strong>Register with BPO companies</strong> — Start with these 3 in California:<br>
+      1. Altisource (altisource.com/agentconnection)<br>
+      2. Clear Capital (clearcapital.com/join-our-network)<br>
+      3. CoreLogic (corelogic.com/solutions/bpo)
+    </div>
+  </div>
+</div>
+
+<div class="done-banner" id="doneBanner">
+  🏡 Site is Live — Ben Ryan Real Estate Services
+</div>
+
+<script>
+const checks = document.querySelectorAll('.step-check');
+const total = checks.length;
+
+function updateProgress() {
+  const done = document.querySelectorAll('.step-check.done').length;
+  document.getElementById('progressText').textContent = done + ' of ' + total + ' steps complete';
+  document.getElementById('progressFill').style.width = (done/total*100) + '%';
+  document.getElementById('doneBanner').style.display = done === total ? 'block' : 'none';
+  localStorage.setItem('brre-checklist', JSON.stringify([...checks].map(c => c.classList.contains('done'))));
+}
+
+function toggle(el) {
+  el.classList.toggle('done');
+  updateProgress();
+}
+
+// Restore saved state
+try {
+  const saved = JSON.parse(localStorage.getItem('brre-checklist') || '[]');
+  saved.forEach((done, i) => { if (done && checks[i]) checks[i].classList.add('done'); });
+  updateProgress();
+} catch(e) {}
+</script>
+</body>
+</html>

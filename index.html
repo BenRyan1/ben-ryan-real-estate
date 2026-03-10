@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ben Ryan Real Estate Services | Santa Barbara BPO & REO Broker</title>
+<meta name="description" content="California Licensed Real Estate Broker Ben Ryan — BPO specialist, REO asset management, short sales, and luxury listings in Santa Barbara, Montecito & Goleta. CA DRE # 01005833.">
+<meta name="keywords" content="Santa Barbara real estate broker, BPO Santa Barbara, broker price opinion Santa Barbara, REO listings Santa Barbara, Montecito real estate, CA DRE 01005833">
+<meta name="author" content="Ben Ryan">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://benryanrealestate.com/">
+<meta property="og:title" content="Ben Ryan Real Estate Services | Santa Barbara BPO & REO Broker">
+<meta property="og:description" content="California Licensed Broker — BPO specialist and REO asset management in Santa Barbara. CA DRE # 01005833.">
+<meta property="og:image" content="https://benryanrealestate.com/assets/og-image.jpg">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ben Ryan Real Estate Services | Santa Barbara">
+<meta name="twitter:description" content="BPO Specialist · REO Asset Management · CA Licensed Broker DRE # 01005833">
+
+<!-- PWA -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#b8935a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ben Ryan RE">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://benryanrealestate.com/">
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Ben Ryan Real Estate Services",
+  "url": "https://benryanrealestate.com",
+  "description": "California Licensed Real Estate Broker specializing in BPOs, REO asset management, short sales, and luxury property listings in Santa Barbara.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santa Barbara",
+    "addressRegion": "CA",
+    "addressCountry": "US"
+  },
+  "areaServed": ["Santa Barbara", "Montecito", "Goleta", "Carpinteria", "Summerland"],
+  "founder": {
+    "@type": "Person",
+    "name": "Ben Ryan",
+    "jobTitle": "California Licensed Real Estate Broker",
+    "identifier": "CA DRE 01005833"
+  },
+  "hasCredential": "California DRE License 01005833",
+  "knowsAbout": ["Broker Price Opinion", "REO Asset Management", "Short Sale", "Real Estate Valuation"],
+  "sameAs": []
+}
+</script>
+
+<!-- Google Analytics — replace G-KW5L7T2P64 with your GA4 ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW5L7T2P64"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KW5L7T2P64');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --deep: #122336;
+    --gold: #b8935a;
+    --gold-light: #d4aa72;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f4;
+    --muted: #8a9ab0;
+    --text: #1a2b3c;
+    --border: rgba(184,147,90,0.25);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,27,42,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    display: flex; align-items: baseline; gap: 0.75rem;
+  }
+  .logo-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400;
+    color: var(--cream); letter-spacing: 0.02em;
+  }
+  .logo-tag {
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em;
+    color: var(--gold); text-transform: uppercase;
+  }
+
+  nav { display: flex; gap: 2.5rem; align-items: center; }
+  nav a {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted);
+    text-decoration: none; transition: color 0.3s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--gold); color: var(--navy) !important;
+    padding: 0.55rem 1.4rem; font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    transition: background 0.3s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid; grid-template-columns: 1fr 1fr;
+    position: relative; overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(184,147,90,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,147,90,0.04) 1px, transparent 1px);
+    background-size: 80px 80px;
+    pointer-events: none;
+  }
+
+  .hero-left {
+    padding: 14rem 4rem 6rem 6rem;
+    display: flex; flex-direction: column; justify-content: center;
+    position: relative; z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.8rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.8rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--cream); margin-bottom: 1.5rem;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1rem; font-weight: 300; line-height: 1.8;
+    color: var(--muted); max-width: 440px; margin-bottom: 3rem;
+  }
+
+  .hero-actions { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: var(--gold); color: var(--navy);
+    padding: 0.9rem 2.2rem; font-size: 0.75rem;
+    font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    border: none; cursor: pointer; text-decoration: none;
+    transition: all 0.3s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    border: 1px solid var(--border); color: var(--muted);
+    padding: 0.9rem 2.2rem; font-size: 0.75rem;
+    font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    cursor: pointer; text-decoration: none;
+    transition: all 0.3s; display: inline-block; background: transparent;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 3rem; border-top: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 300; color: var(--gold); display: block;
+  }
+  .stat-label {
+    font-size: 0.65rem; font-weight: 500; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+  }
+
+  .hero-right {
+    position: relative; overflow: hidden;
+  }
+  .hero-image-stack {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #1a3a5c 0%, #0d1b2a 60%, #0a1520 100%);
+  }
+  .hero-image-stack::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse at 70% 30%, rgba(184,147,90,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 30% 80%, rgba(13,90,150,0.15) 0%, transparent 50%);
+  }
+
+  .hero-card {
+    position: absolute; bottom: 4rem; left: -2rem;
+    background: rgba(245,240,232,0.97);
+    padding: 1.8rem 2.2rem; width: 280px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+    z-index: 10;
+    animation: floatCard 4s ease-in-out infinite;
+  }
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  .hero-card-label {
+    font-size: 0.6rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
+  }
+  .hero-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--navy); margin-bottom: 0.4rem;
+  }
+  .hero-card-detail {
+    font-size: 0.75rem; color: #666; line-height: 1.6;
+  }
+  .hero-card-price {
+    font-size: 1.4rem; font-weight: 600; color: var(--navy);
+    margin-top: 0.8rem;
+  }
+
+  /* SB skyline silhouette */
+  .sb-silhouette {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 220px; z-index: 5;
+  }
+
+  /* ── SERVICES STRIP ── */
+  .services-strip {
+    background: var(--gold);
+    padding: 1.2rem 6rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .strip-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--navy);
+  }
+  .strip-icon { font-size: 1rem; }
+  .strip-divider { width: 1px; height: 20px; background: rgba(13,27,42,0.25); }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 8rem 6rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8rem;
+    align-items: center;
+  }
+
+  .section-label {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--gold);
+    display: flex; align-items: center; gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .section-label::after {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 300; line-height: 1.2; color: var(--navy);
+    margin-bottom: 1.5rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold); }
+
+  .body-text {
+    font-size: 0.95rem; font-weight: 300; line-height: 1.9;
+    color: #556; margin-bottom: 1.2rem;
+  }
+
+  .credential-list { margin-top: 2.5rem; }
+  .credential {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    padding: 1rem 0; border-bottom: 1px solid #eee;
+  }
+  .credential:last-child { border-bottom: none; }
+  .cred-dot {
+    width: 8px; height: 8px; background: var(--gold);
+    border-radius: 50%; flex-shrink: 0; margin-top: 0.35rem;
+  }
+  .cred-text { font-size: 0.85rem; color: #445; line-height: 1.6; }
+  .cred-strong { font-weight: 600; color: var(--navy); }
+
+  .about-visual {
+    position: relative;
+  }
+  .about-box {
+    background: var(--navy);
+    padding: 3.5rem;
+    position: relative;
+  }
+  .about-box::before {
+    content: '';
+    position: absolute; top: -12px; right: -12px;
+    width: 100%; height: 100%;
+    border: 1px solid var(--gold); z-index: -1;
+  }
+  .about-box-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 300; color: var(--cream);
+    margin-bottom: 2rem; line-height: 1.3;
+  }
+  .about-box-title em { color: var(--gold-light); font-style: italic; }
+
+  .bpo-pipeline {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .pipeline-step {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(184,147,90,0.15);
+    position: relative;
+  }
+  .pipeline-step:last-child { border-bottom: none; }
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300;
+    color: var(--gold); flex-shrink: 0; line-height: 1;
+    width: 28px; text-align: right;
+  }
+  .step-content {}
+  .step-title {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--cream); margin-bottom: 0.3rem;
+  }
+  .step-desc {
+    font-size: 0.78rem; font-weight: 300; color: var(--muted); line-height: 1.6;
+  }
+
+  /* ── SERVICES ── */
+  .services {
+    background: var(--navy);
+    padding: 8rem 6rem;
+  }
+  .services-header {
+    text-align: center; margin-bottom: 5rem;
+  }
+  .services-header .section-label {
+    justify-content: center;
+  }
+  .services-header .section-label::before {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+  }
+  .services-header .section-label::after { display: none; }
+  .services-header .section-title { color: var(--cream); }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px;
+    background: rgba(184,147,90,0.15);
+  }
+  .service-card {
+    background: var(--deep);
+    padding: 3rem 2.5rem;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  .service-card:hover { background: #1a3a5c; }
+
+  .service-icon {
+    font-size: 1.8rem; margin-bottom: 1.5rem; display: block;
+  }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--cream);
+    margin-bottom: 0.8rem;
+  }
+  .service-desc {
+    font-size: 0.8rem; font-weight: 300; color: var(--muted); line-height: 1.8;
+  }
+  .service-link {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    margin-top: 1.5rem; font-size: 0.7rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+    transition: gap 0.3s;
+  }
+  .service-link:hover { gap: 0.9rem; }
+
+  /* ── BPO COMPANIES ── */
+  .bpo-section {
+    padding: 8rem 6rem;
+    background: var(--cream);
+  }
+  .bpo-intro {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 6rem;
+    margin-bottom: 4rem; align-items: start;
+  }
+  .bpo-companies-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  }
+  .bpo-company-card {
+    background: white;
+    border: 1px solid #e8e0d0;
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+  .bpo-company-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 30px rgba(184,147,90,0.12);
+    transform: translateY(-3px);
+  }
+  .bpo-company-name {
+    font-weight: 600; font-size: 0.9rem; color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+  .bpo-company-type {
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.7rem;
+  }
+  .bpo-company-note {
+    font-size: 0.75rem; color: #778; line-height: 1.5;
+  }
+  .bpo-pay {
+    display: inline-block; margin-top: 0.8rem;
+    background: var(--navy); color: var(--gold-light);
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+    padding: 0.25rem 0.6rem; text-transform: uppercase;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 8rem 6rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8rem;
+    background: var(--navy);
+  }
+  .contact-left {}
+  .contact-left .section-title { color: var(--cream); }
+
+  .contact-detail {
+    display: flex; gap: 1.5rem; margin-top: 2.5rem;
+    padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    align-items: flex-start;
+  }
+  .contact-detail:last-of-type { border-bottom: none; }
+  .contact-icon { font-size: 1.2rem; margin-top: 0.1rem; }
+  .contact-info-label {
+    font-size: 0.62rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+  }
+  .contact-info-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--cream);
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-label {
+    font-size: 0.62rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .form-input, .form-select, .form-textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(184,147,90,0.2);
+    color: var(--cream); padding: 0.85rem 1rem;
+    font-family: 'Jost', sans-serif; font-size: 0.85rem;
+    outline: none; transition: border 0.3s;
+    width: 100%;
+  }
+  .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--gold);
+  }
+  .form-select { cursor: pointer; }
+  .form-select option { background: var(--navy); }
+  .form-textarea { resize: vertical; min-height: 100px; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080f18;
+    padding: 2.5rem 6rem;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: var(--muted);
+  }
+  .footer-legal {
+    font-size: 0.68rem; color: #445; text-align: center;
+    line-height: 1.7;
+  }
+  .footer-dre {
+    font-size: 0.68rem; color: var(--gold);
+    letter-spacing: 0.12em;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1; transform: translateY(0);
+  }
+
+  /* Hero entrance */
+  .hero-left > * {
+    opacity: 0; transform: translateY(20px);
+    animation: heroIn 0.8s forwards;
+  }
+  .hero-eyebrow { animation-delay: 0.2s; }
+  .hero-title { animation-delay: 0.4s; }
+  .hero-sub { animation-delay: 0.6s; }
+  .hero-actions { animation-delay: 0.8s; }
+  .hero-stats { animation-delay: 1.0s; }
+
+  @keyframes heroIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    header { padding: 0 2rem; }
+    nav { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 10rem 2.5rem 5rem; }
+    .about, .contact { grid-template-columns: 1fr; gap: 4rem; padding: 5rem 2.5rem; }
+    .services, .bpo-section { padding: 5rem 2.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .bpo-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .bpo-companies-grid { grid-template-columns: 1fr 1fr; }
+    footer { padding: 2rem 2.5rem; flex-direction: column; text-align: center; }
+    .services-strip { padding: 1rem 2rem; gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <span class="logo-name">Ben Ryan</span>
+    <span class="logo-tag">Real Estate Services</span>
+  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#bpo">BPO Network</a>
+    <a href="#contact" class="nav-cta">Request BPO</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Santa Barbara, California</div>
+    <h1 class="hero-title">
+      Where Expertise<br>Meets <em>Precision</em><br>in Property
+    </h1>
+    <p class="hero-sub">
+      California Licensed Broker. BPO Specialist. REO Asset Management.
+      45+ years of market intelligence working for you.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Request a BPO</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-num">45+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div>
+        <span class="stat-num">CA</span>
+        <span class="stat-label">Licensed Broker</span>
+      </div>
+      <div>
+        <span class="stat-num">SB</span>
+        <span class="stat-label">Market Expert</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-image-stack">
+      <!-- SVG Santa Barbara Mission silhouette -->
+      <svg class="sb-silhouette" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="rgba(13,27,42,0)"/>
+            <stop offset="100%" stop-color="rgba(13,27,42,0.9)"/>
+          </linearGradient>
+        </defs>
+        <!-- Simplified SB building skyline -->
+        <path d="M0,220 L0,160 L60,160 L60,130 L80,130 L80,110 L90,110 L90,105 L95,95 L100,105 L100,110 L110,110 L110,130 L130,130 L130,90 L140,80 L150,70 L155,60 L160,70 L165,80 L175,90 L175,130 L200,130 L200,100 L220,100 L220,80 L230,70 L240,80 L240,100 L260,100 L260,130 L290,130 L290,120 L310,120 L310,130 L340,130 L340,100 L355,90 L365,80 L375,90 L385,100 L410,100 L410,80 L425,65 L440,80 L440,100 L460,100 L460,120 L490,120 L490,110 L510,110 L510,95 L520,90 L530,95 L530,110 L550,110 L550,120 L580,120 L580,100 L600,85 L615,100 L615,120 L650,120 L650,110 L670,90 L685,75 L700,90 L710,110 L740,110 L740,130 L770,130 L770,110 L790,100 L810,110 L810,130 L840,130 L840,120 L870,120 L870,130 L900,130 L900,110 L920,95 L935,110 L935,130 L970,130 L970,140 L1000,140 L1000,130 L1020,120 L1040,130 L1040,150 L1080,150 L1080,140 L1120,140 L1120,155 L1200,155 L1200,220 Z" fill="rgba(184,147,90,0.15)"/>
+        <path d="M0,220 L0,170 L50,170 L50,155 L70,155 L80,145 L90,140 L100,145 L110,155 L140,155 L140,140 L160,125 L180,140 L180,155 L210,155 L210,145 L230,135 L250,145 L250,165 L280,165 L280,155 L310,155 L310,145 L330,135 L350,145 L350,160 L390,160 L390,145 L415,130 L435,145 L435,165 L480,165 L480,155 L510,155 L510,145 L535,140 L560,145 L560,165 L600,165 L600,155 L620,145 L645,155 L645,170 L680,170 L680,158 L705,145 L720,158 L720,170 L760,170 L760,160 L790,150 L810,160 L810,175 L860,175 L860,165 L890,155 L910,165 L910,180 L960,180 L960,170 L1000,162 L1040,170 L1040,185 L1100,185 L1100,175 L1150,170 L1200,175 L1200,220 Z" fill="rgba(18,35,54,0.8)"/>
+        <rect x="0" y="0" width="1200" height="220" fill="url(#skyGrad)"/>
+      </svg>
+    </div>
+    <!-- Floating card -->
+    <div class="hero-card">
+      <div class="hero-card-label">Latest BPO · Santa Barbara</div>
+      <div class="hero-card-title">Riviera Estate, Upper Village</div>
+      <div class="hero-card-detail">3 BD · 2.5 BA · 2,400 SF · Ocean Views<br>Distressed Asset — Bank Ordered</div>
+      <div class="hero-card-price">$2,875,000</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="services-strip">
+  <div class="strip-item"><span class="strip-icon">📋</span> Broker Price Opinions</div>
+  <div class="strip-divider"></div>
+  <div class="strip-item"><span class="strip-icon">🏦</span> REO Asset Management</div>
+  <div class="strip-divider"></div>
+  <div class="strip-item"><span class="strip-icon">⚖️</span> Short Sale Negotiation</div>
+  <div class="strip-divider"></div>
+  <div class="strip-item"><span class="strip-icon">🔑</span> Listing & Sales Representation</div>
+  <div class="strip-divider"></div>
+  <div class="strip-item"><span class="strip-icon">📊</span> Market Valuations</div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div>
+    <div class="section-label">About Ben Ryan</div>
+    <h2 class="section-title">45 Years of<br><em>Market Intelligence</em></h2>
+    <p class="body-text">
+      As a California Licensed Real Estate Broker based in Santa Barbara, I bring a rare combination of deep local market knowledge, BPO expertise, and decades of negotiation experience to every transaction.
+    </p>
+    <p class="body-text">
+      My practice focuses on distressed assets, REO disposition, and broker price opinions — serving banks, asset managers, and private investors who need accurate, fast, and reliable valuations in the Santa Barbara luxury corridor.
+    </p>
+    <div class="credential-list">
+      <div class="credential">
+        <div class="cred-dot"></div>
+        <div class="cred-text"><span class="cred-strong">California Licensed Real Estate Broker</span> — Full brokerage authority across all transaction types</div>
+      </div>
+      <div class="credential">
+        <div class="cred-dot"></div>
+        <div class="cred-text"><span class="cred-strong">BPO Specialist</span> — Interior & exterior valuations for lenders, servicers, and AMCs</div>
+      </div>
+      <div class="credential">
+        <div class="cred-dot"></div>
+        <div class="cred-text"><span class="cred-strong">REO Listing Agent</span> — Bank-owned property management, disposition, and sale</div>
+      </div>
+      <div class="credential">
+        <div class="cred-dot"></div>
+        <div class="cred-text"><span class="cred-strong">45+ Years Market Experience</span> — Santa Barbara, Montecito, Goleta, and surrounding communities</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-visual fade-in" id="about">
+    <div class="about-box">
+      <div class="about-box-title">The BPO→REO<br><em>Revenue Pipeline</em></div>
+      <div class="bpo-pipeline">
+        <div class="pipeline-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Complete BPOs</div>
+            <div class="step-desc">Banks & AMCs pay $40–$80 per report. Build credibility fast.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Earn Trust</div>
+            <div class="step-desc">Asset managers review your work. Quality leads to preferred vendor status.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Get REO Listings</div>
+            <div class="step-desc">Banks assign foreclosed properties to you for listing & sale.</div>
+          </div>
+        </div>
+        <div class="pipeline-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Collect Commission</div>
+            <div class="step-desc">Full listing commission on every REO sold — no referral splits.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header fade-in">
+    <div class="section-label">What I Offer</div>
+    <h2 class="section-title" style="color:var(--cream)">Full-Spectrum<br><em>Real Estate Services</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <span class="service-icon">📋</span>
+      <div class="service-name">Broker Price Opinions</div>
+      <div class="service-desc">Fast, accurate BPOs for lenders, servicers, and asset management companies. Interior and exterior reports with full MLS comp analysis. Delivered within 5 business days.</div>
+      <a href="#contact" class="service-link">Order a BPO →</a>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">🏦</span>
+      <div class="service-name">REO Asset Management</div>
+      <div class="service-desc">Complete management of bank-owned properties from acquisition to closing. Property inspection, preservation coordination, pricing strategy, and disposition.</div>
+      <a href="#contact" class="service-link">Learn More →</a>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">⚖️</span>
+      <div class="service-name">Short Sale Negotiation</div>
+      <div class="service-desc">Expert negotiation with lenders on behalf of distressed homeowners. Complete transaction management from hardship documentation to closing.</div>
+      <a href="#contact" class="service-link">Get Help →</a>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">🔑</span>
+      <div class="service-name">Luxury Listings & Sales</div>
+      <div class="service-desc">Strategic marketing and representation for Santa Barbara's premium residential market. From Montecito estates to coastal properties, every listing is handled with precision.</div>
+      <a href="#contact" class="service-link">List With Me →</a>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">📊</span>
+      <div class="service-name">Market Valuations</div>
+      <div class="service-desc">Comprehensive comparative market analysis for private clients, estate planning, divorce proceedings, tax appeals, and investment decisions.</div>
+      <a href="#contact" class="service-link">Get Valuation →</a>
+    </div>
+    <div class="service-card fade-in">
+      <span class="service-icon">🤝</span>
+      <div class="service-name">Investor Partnerships</div>
+      <div class="service-desc">First-look access to off-market distressed properties for qualified investors. Build your Santa Barbara portfolio with an insider's edge.</div>
+      <a href="#contact" class="service-link">Join Network →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BPO COMPANIES -->
+<section class="bpo-section" id="bpo">
+  <div class="bpo-intro">
+    <div class="fade-in">
+      <div class="section-label">BPO Network</div>
+      <h2 class="section-title">California<br><em>BPO Partners</em></h2>
+    </div>
+    <div class="fade-in">
+      <p class="body-text">As a registered vendor with California's top BPO ordering companies, Ben Ryan Real Estate Services is positioned at the center of the distressed property pipeline — receiving assignments, building lender relationships, and converting BPO work into REO listings.</p>
+      <p class="body-text" style="font-size:0.8rem; color:#778;">Companies pay $40–$80 per completed BPO. REO listing assignments follow quality performance.</p>
+    </div>
+  </div>
+  <div class="bpo-companies-grid">
+    <div class="bpo-company-card fade-in">
+      <div class="bpo-company-type">National AMC</div>
+      <div class="bpo-company-name">Altisource</div>
+      <div class="bpo-company-note">Large-volume BPO and REO servicer. Major Ocwen/PHH portfolio assignments.</div>
+      <span class="bpo-pay">$50–$75 / BPO</span>
+    </div>
+    <div class="bpo-company-card fade-in">
+      <div class="bpo-company-type">National Platform</div>
+      <div class="bpo-company-name">CoreLogic</div>
+      <div class="bpo-company-note">Data-driven BPO platform. High volume, excellent tech integration.</div>
+      <span class="bpo-pay">$45–$65 / BPO</span>
+    </div>
+    <div class="bpo-company-card fade-in">
+      <div class="bpo-company-type">REO Servicer</div>
+      <div class="bpo-company-name">Xome / Nationstar</div>
+      <div class="bpo-company-note">Mr. Cooper subsidiary. Direct pipeline from BPO to REO listing assignment.</div>
+      <span class="bpo-pay">$50–$70 / BPO</span>
+    </div>
+    <div class="bpo-company-card fade-in">
+      <div class="bpo-company-type">Valuation Network</div>
+      <div class="bpo-company-name">Clear Capital</div>
+      <div class="bpo-company-note">Hybrid appraisal and BPO platform. Strong California presence.</div>
+      <span class="bpo-pay">$45–$60 / BPO</span>
+    </div>
+    <div class="bpo-company-card fade-in">
+      <div class="bpo-company-type">Gov / HUD</div>
+      <div class="bpo-company-name">Freddie Mac BPO Direct</div>
+      <div class="bpo-company-note">Government-backed portfolio valuations. Prestigious vendor status.</div>
+      <span class="bpo-pay">$55–$80 / BPO</span>
+    </div>
+    <div class="bpo-company-card fade-in">
+      <div class="bpo-company-type">Asset Management</div>
+      <div class="bpo-company-name">Five Brothers / VRM</div>
+      <div class="bpo-company-note">Field services + BPO. California distressed property specialists.</div>
+      <span class="bpo-pay">$40–$65 / BPO</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left fade-in">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Discuss<br><em>Your Property</em></h2>
+    <div class="contact-detail">
+      <div class="contact-icon">📍</div>
+      <div>
+        <div class="contact-info-label">Location</div>
+        <div class="contact-info-value">Santa Barbara, California</div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">🏛️</div>
+      <div>
+        <div class="contact-info-label">License</div>
+        <div class="contact-info-value">CA DRE Lic # 01005833</div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">⏱️</div>
+      <div>
+        <div class="contact-info-label">BPO Turnaround</div>
+        <div class="contact-info-value">3–5 Business Days</div>
+      </div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-icon">📊</div>
+      <div>
+        <div class="contact-info-label">Coverage Area</div>
+        <div class="contact-info-value">Santa Barbara · Montecito · Goleta · Carpinteria</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fade-in">
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" placeholder="Ben" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" placeholder="Ryan" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" placeholder="you@company.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service Needed</label>
+        <select class="form-select form-input">
+          <option value="">Select a service...</option>
+          <option>Broker Price Opinion (BPO)</option>
+          <option>REO Asset Management</option>
+          <option>Short Sale Assistance</option>
+          <option>Property Listing</option>
+          <option>Market Valuation</option>
+          <option>Investor Partnership</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Property Address or Message</label>
+        <textarea class="form-textarea form-input" placeholder="Property address or details about your needs..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%; text-align:center; padding:1.1rem;">
+        Send Request
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Ben Ryan Real Estate Services</div>
+  <div class="footer-legal">
+    © 2026 Ben Ryan Real Estate Services · Santa Barbara, California<br>
+    All transactions subject to California DRE regulations
+  </div>
+  <div class="footer-dre">CA DRE Lic # 01005833</div>
+</footer>
+
+<script>
+// Intersection Observer for fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 100);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Form handler — posts to Cloudflare Worker → MailerLite
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  const form = e.target;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const payload = {
+    email: form.querySelector('[type="email"]').value,
+    name: form.querySelectorAll('.form-input')[0].value + ' ' + form.querySelectorAll('.form-input')[1].value,
+    service: form.querySelector('select').value,
+    message: form.querySelector('textarea').value,
+    source: 'ben-ryan-contact-form'
+  };
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (res.ok) {
+      btn.textContent = '✓ Request Sent — Ben will be in touch shortly';
+      btn.style.background = '#2a6e3a';
+      btn.style.color = '#fff';
+      form.reset();
+    } else {
+      throw new Error('Server error');
+    }
+  } catch {
+    // Fallback: mailto
+    const subject = encodeURIComponent('Real Estate Inquiry: ' + payload.service);
+    const body = encodeURIComponent('Name: ' + payload.name + '\nEmail: ' + payload.email + '\nService: ' + payload.service + '\n\n' + payload.message);
+    window.location.href = 'mailto:ben@benryanrealestate.com?subject=' + subject + '&body=' + body;
+    btn.textContent = 'Send Request';
+    btn.disabled = false;
+  }
+}
+
+// Smooth scroll for nav
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
