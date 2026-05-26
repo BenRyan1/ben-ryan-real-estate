@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distressed Property Outreach System — Benjamin Ryan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Source Sans 3',sans-serif;background:#f4f1ec;color:#1a1a1a;}
+  .container{max-width:960px;margin:0 auto;padding:40px 24px;}
+  .header{background:#1a2340;color:#fff;padding:40px 48px;margin-bottom:32px;}
+  .header h1{font-family:'Playfair Display',serif;font-size:30px;margin-bottom:8px;}
+  .header p{opacity:0.7;font-size:14px;letter-spacing:0.5px;}
+  .header .gold{color:#b8952a;}
+  .tabs{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
+  .tab{padding:10px 20px;background:#fff;border:2px solid #ddd;cursor:pointer;font-size:13px;font-weight:600;border-radius:2px;transition:all 0.2s;}
+  .tab.active{background:#1a2340;color:#fff;border-color:#1a2340;}
+  .sequence{display:none;background:#fff;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+  .sequence.active{display:block;}
+  .sequence h2{font-family:'Playfair Display',serif;font-size:22px;color:#1a2340;margin-bottom:6px;}
+  .sequence .desc{color:#666;font-size:13px;margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid #eee;}
+  .touch{margin-bottom:28px;padding:20px 24px;border-left:4px solid #b8952a;background:#fafafa;}
+  .touch-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+  .touch-num{background:#b8952a;color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;}
+  .touch-title{font-weight:600;font-size:15px;color:#1a2340;}
+  .touch-meta{font-size:12px;color:#888;margin-left:auto;}
+  .letter-body{background:#fff;border:1px solid #e0ddd5;padding:20px 24px;font-size:14px;line-height:1.8;white-space:pre-wrap;font-family:'Source Sans 3',sans-serif;}
+  .copy-btn{margin-top:10px;padding:6px 16px;background:#1a2340;color:#fff;border:none;font-size:12px;cursor:pointer;border-radius:2px;font-family:'Source Sans 3',sans-serif;}
+  .footer-bar{background:#1a2340;color:#fff;padding:20px 48px;margin-top:32px;font-size:12px;opacity:0.8;text-align:center;}
+  .personalize{background:#fff3cd;border:1px solid #ffc107;padding:8px 12px;font-size:12px;color:#856404;margin-bottom:12px;border-radius:2px;}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>21-Touch Distressed Property <span class="gold">Outreach System</span></h1>
+  <p>Benjamin Ryan · CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com</p>
+</div>
+<div class="container">
+  <div class="tabs">
+    <div class="tab active" onclick="showSeq('probate')">Probate Sequence</div>
+    <div class="tab" onclick="showSeq('divorce')">Divorce Sequence</div>
+    <div class="tab" onclick="showSeq('preforeclosure')">Pre-Foreclosure</div>
+  </div>
+
+  <!-- PROBATE -->
+  <div class="sequence active" id="probate">
+    <h2>Probate Outreach Sequence</h2>
+    <div class="desc">7-touch sequence targeting estate administrators, personal representatives, and heirs. Tone: respectful, patient, no pressure.</div>
+
+    <div class="touch">
+      <div class="touch-header">
+        <div class="touch-num">1</div>
+        <div class="touch-title">Initial Letter — Week 1</div>
+        <div class="touch-meta">Mail · First Class</div>
+      </div>
+      <div class="personalize">[NAME], [ADDRESS], [PROPERTY ADDRESS] — personalize before sending</div>
+      <div class="letter-body">[DATE]
+
+[ADMINISTRATOR NAME]
+[ADDRESS]
+
+Re: [PROPERTY ADDRESS], [CITY]
+
+Dear [Name],
+
+I am writing to introduce myself as a resource during what I understand may be a demanding time. My name is Benjamin Ryan, and I have been a licensed California Real Estate Broker in Santa Barbara for over 35 years.
+
+If the estate includes real property that will need to be addressed, I offer a complimentary, confidential Broker Price Opinion — no cost, no obligation, no pressure. This gives the estate an accurate picture of current market value, which can be useful for probate court filings, equitable distribution among heirs, or simply making an informed decision about timing.
+
+I work exclusively in the Santa Barbara and Montecito corridor and have guided many families through the quiet, discreet sale of estate properties — often without a public listing.
+
+When the time is right, I would welcome the chance to speak with you.
+
+Respectfully,
+
+Benjamin Ryan
+California Real Estate Broker · CA DRE #01005833
+(805) 886-4092
+benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header">
+        <div class="touch-num">2</div>
+        <div class="touch-title">Follow-Up Call Script — Week 3</div>
+        <div class="touch-meta">Phone</div>
+      </div>
+      <div class="letter-body">"Hello, may I speak with [Name]? This is Benjamin Ryan calling — I'm a real estate broker here in Santa Barbara. I sent a letter a couple of weeks ago regarding the property at [address]. I just wanted to make sure it arrived and let you know I'm available if you have any questions about the property's value or the process. No rush at all — I know these matters take time. Would a brief conversation be helpful?"</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Script</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header">
+        <div class="touch-num">3</div>
+        <div class="touch-title">Market Update Letter — Week 6</div>
+        <div class="touch-meta">Mail</div>
+      </div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+[ADDRESS]
+
+Re: [PROPERTY ADDRESS] — Current Market Conditions
+
+Dear [Name],
+
+I wanted to reach out with a brief market update for properties similar to [address] in [neighborhood].
+
+Properties in this area are currently [selling in X days / receiving strong interest / in limited supply], and values have [increased / remained stable] over the past 90 days. This may be relevant as you and the estate's representatives consider timing.
+
+I remain available for a no-cost Broker Price Opinion at your convenience. Many executors find this useful before the confirmation hearing.
+
+With respect,
+
+Benjamin Ryan
+CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header">
+        <div class="touch-num">4</div>
+        <div class="touch-title">Attorney Referral Card — Week 8</div>
+        <div class="touch-meta">Mail with card</div>
+      </div>
+      <div class="letter-body">[NAME],
+
+Enclosed is a brief resource list of Santa Barbara probate and estate attorneys who may be helpful if you have not yet retained counsel for the real property matters.
+
+I work alongside these professionals regularly and can coordinate directly with your attorney to streamline the valuation and sale process.
+
+I am here when you are ready.
+
+Benjamin Ryan · (805) 886-4092</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Note</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header">
+        <div class="touch-num">5</div>
+        <div class="touch-title">Off-Market Buyer Letter — Week 12</div>
+        <div class="touch-meta">Mail</div>
+      </div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+Dear [Name],
+
+I am writing with a specific opportunity that may be of interest to the estate.
+
+I currently represent several qualified buyers actively seeking properties in [neighborhood/area] who prefer private, off-market transactions. This means no public listing, no open houses, and a discreet process that often closes faster than a traditional sale.
+
+If the estate is ready to move forward — or even just explore options — I would welcome a brief conversation.
+
+Benjamin Ryan
+CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header">
+        <div class="touch-num">6</div>
+        <div class="touch-title">Check-In Call — Month 4</div>
+        <div class="touch-meta">Phone</div>
+      </div>
+      <div class="letter-body">"Hello [Name], this is Benjamin Ryan — the broker who's been in touch about [address]. I'm simply checking in to see how things are progressing with the estate. No agenda at all. If there's anything I can help clarify about the property's value or the sale process, I'm happy to assist."</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Script</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header">
+        <div class="touch-num">7</div>
+        <div class="touch-title">Final Letter — Month 6</div>
+        <div class="touch-meta">Mail — Handwritten envelope</div>
+      </div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+Dear [Name],
+
+I have stayed in touch over the past several months because I genuinely believe I can be of service when the time is right for the property at [address].
+
+I will not continue to reach out after this letter — I respect your time and the privacy of family matters. But please know that my door remains open. If you ever need a valuation, a discreet sale, or simply a second opinion, I am a phone call away.
+
+With respect and best wishes,
+
+Benjamin Ryan
+(805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+  </div>
+
+  <!-- DIVORCE -->
+  <div class="sequence" id="divorce">
+    <h2>Divorce / Dissolution Sequence</h2>
+    <div class="desc">7-touch sequence for properties involved in marital dissolution. Tone: neutral, professional, solution-focused. Always address both parties equally.</div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">1</div><div class="touch-title">Initial Letter — Week 1</div><div class="touch-meta">Mail · Both parties if possible</div></div>
+      <div class="personalize">Send to both spouses separately when possible — neutral tone throughout</div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+[ADDRESS]
+
+Re: [PROPERTY ADDRESS]
+
+Dear [Name],
+
+My name is Benjamin Ryan. I am a California Real Estate Broker with over 35 years of experience in Santa Barbara and Montecito.
+
+I understand that life transitions sometimes require addressing real property, and I specialize in handling these matters with complete discretion and professionalism. I work with both parties, attorneys, and mediators to ensure that the property is valued accurately and handled in a way that is fair and efficient for everyone involved.
+
+I offer a complimentary Broker Price Opinion that can be used for settlement purposes, mediation, or court filings — provided at no cost and with no obligation.
+
+If this would be helpful, please don't hesitate to reach out.
+
+Sincerely,
+
+Benjamin Ryan
+CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">2</div><div class="touch-title">Attorney Outreach — Week 2</div><div class="touch-meta">Email or mail to family law attorney</div></div>
+      <div class="letter-body">Subject: Broker Resource for [CLIENT NAME] Property Matter
+
+Dear [Attorney Name],
+
+I am reaching out as a resource for your client's real property at [address]. I specialize in discreet, efficient transactions involving dissolution matters and can provide:
+
+• Court-admissible Broker Price Opinion
+• Coordination with both parties' counsel
+• Off-market sale options to maximize net proceeds
+• Rapid timeline when needed for settlement deadlines
+
+I have worked alongside family law attorneys throughout Santa Barbara County for over 30 years. Please feel free to refer your clients — I am happy to be a resource for your practice.
+
+Benjamin Ryan
+CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Email</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">3</div><div class="touch-title">Follow-Up Letter — Week 4</div><div class="touch-meta">Mail</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+Dear [Name],
+
+I wanted to follow up on my earlier letter regarding [address].
+
+I understand timing is everything in these situations, and I am here whenever you are ready to discuss options — whether that means a confidential valuation, an off-market sale, or simply understanding what the property is worth today.
+
+There is no cost and no commitment involved in speaking with me.
+
+Benjamin Ryan · (805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">4</div><div class="touch-title">Settlement Timeline Letter — Week 8</div><div class="touch-meta">Mail</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+Dear [Name],
+
+If your settlement has a deadline approaching, I want you to know that I can move quickly. In the Santa Barbara market, well-priced properties with motivated sellers can close in 21–30 days with the right buyer.
+
+I also have relationships with buyers who prefer off-market acquisitions — which means no listing, no public exposure, and a faster, cleaner close.
+
+Please call me anytime. I am here to help.
+
+Benjamin Ryan · (805) 886-4092</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">5</div><div class="touch-title">Net Proceeds Letter — Month 3</div><div class="touch-meta">Mail</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+Dear [Name],
+
+One question I often hear from clients in your situation: "What will we actually net after the sale?"
+
+I am happy to prepare a detailed net proceeds estimate for [address] — factoring in current market value, closing costs, and any liens — so you and your attorney have a clear picture for settlement discussions.
+
+This is provided at no cost. Just give me a call.
+
+Benjamin Ryan · CA DRE #01005833 · (805) 886-4092</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">6</div><div class="touch-title">Check-In Call — Month 4</div><div class="touch-meta">Phone</div></div>
+      <div class="letter-body">"Hello [Name], this is Benjamin Ryan — the broker who sent you a letter about [address]. I just wanted to check in briefly. I know these processes take time and I'm not calling to pressure you at all. I just want to make sure you know I'm available if you need a valuation or have any questions about your options."</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Script</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">7</div><div class="touch-title">Final Letter — Month 5</div><div class="touch-meta">Mail</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+This will be my final outreach regarding [address].
+
+I have reached out several times because I genuinely believe I can help — whether through an accurate valuation, a discreet sale, or simply answering questions. My door remains open at any time.
+
+I wish you a smooth resolution.
+
+Benjamin Ryan
+(805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+  </div>
+
+  <!-- PRE-FORECLOSURE -->
+  <div class="sequence" id="preforeclosure">
+    <h2>Pre-Foreclosure / NOD Sequence</h2>
+    <div class="desc">7-touch sequence for homeowners who have received a Notice of Default. Tone: urgent but compassionate. Time-sensitive — act within days of NOD filing.</div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">1</div><div class="touch-title">Urgent First Letter — Within 72 Hours of NOD</div><div class="touch-meta">Mail · Priority · Hand-address envelope</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+[ADDRESS]
+
+IMPORTANT INFORMATION ABOUT YOUR PROPERTY
+
+Dear [Name],
+
+I am reaching out because public records indicate that a Notice of Default has been filed regarding [address]. I want to be direct with you: you may have more options than you realize, and time matters.
+
+My name is Benjamin Ryan. I am a California Real Estate Broker with 35+ years in Santa Barbara. I am not here to pressure you — I am here to give you information.
+
+Depending on your equity position and timeline, you may be able to:
+• Sell the property before foreclosure and preserve your equity
+• Execute a private sale without a public listing
+• Negotiate directly with your lender with a stronger position
+
+A free, confidential conversation costs you nothing. Please call me — the sooner the better.
+
+Benjamin Ryan
+CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">2</div><div class="touch-title">Follow-Up Call — Day 5</div><div class="touch-meta">Phone · Morning call</div></div>
+      <div class="letter-body">"Hello, may I speak with [Name]? This is Benjamin Ryan — I sent you a letter earlier this week about your property at [address]. I know this is a stressful time and I'll be brief. I have helped homeowners in similar situations sell quietly and protect their equity before foreclosure. Would you be open to a 10-minute conversation? There's no cost and no obligation."</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Script</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">3</div><div class="touch-title">Equity Analysis Letter — Week 2</div><div class="touch-meta">Mail</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+Dear [Name],
+
+Based on comparable sales in your area, [address] may be worth significantly more than what is owed on it. If that is the case, a sale before the foreclosure date could put real money in your pocket — money that would otherwise be lost.
+
+I can prepare a confidential equity analysis at no cost. This takes 24 hours and gives you a clear picture of where you stand.
+
+Please call me at (805) 886-4092. Time is the most important factor right now.
+
+Benjamin Ryan · CA DRE #01005833</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">4</div><div class="touch-title">Off-Market Buyer Letter — Week 3</div><div class="touch-meta">Mail</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+Dear [Name],
+
+I currently represent cash buyers who can close in 14–21 days and prefer off-market properties. For a homeowner facing a foreclosure deadline, this can mean:
+
+✓ No public listing — complete privacy
+✓ Fast close — before the trustee sale date
+✓ Your equity preserved
+✓ Clean break
+
+If you are open to a conversation, please call me this week.
+
+Benjamin Ryan · (805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">5</div><div class="touch-title">Urgency Letter — Week 5</div><div class="touch-meta">Mail · Bold envelope</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+IMPORTANT — PLEASE READ
+
+Dear [Name],
+
+The foreclosure clock is moving. Once the trustee sale occurs, your options disappear entirely.
+
+I am reaching out one more time because I believe you may have equity worth protecting. A 15-minute phone call could make a significant difference.
+
+Please call me today: (805) 886-4092.
+
+Benjamin Ryan · CA DRE #01005833</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">6</div><div class="touch-title">Final Attempt Call — Week 7</div><div class="touch-meta">Phone</div></div>
+      <div class="letter-body">"Hello [Name], this is Benjamin Ryan. I've reached out several times about [address] and I want to make one final attempt because I genuinely believe I can help you protect your equity. If you're not interested that's completely fine — just say the word and I won't contact you again. But if there's any part of you that wants to explore your options, please give me 10 minutes. I'm at (805) 886-4092."</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Script</button>
+    </div>
+
+    <div class="touch">
+      <div class="touch-header"><div class="touch-num">7</div><div class="touch-title">Post-NOD — After Cure Period</div><div class="touch-meta">Mail if still active</div></div>
+      <div class="letter-body">[DATE]
+
+[NAME]
+
+Dear [Name],
+
+If you were able to resolve your situation — congratulations. If the property is still something you need to address, I remain available.
+
+There are still options even at this stage, and I am happy to discuss them confidentially.
+
+Benjamin Ryan · (805) 886-4092 · benryanrealestate@gmail.com</div>
+      <button class="copy-btn" onclick="copyText(this)">Copy Letter</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer-bar">
+  Benjamin Ryan · CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com · 1187 Coast Village Rd. #110, Santa Barbara, CA 93108
+</div>
+
+<script>
+  function showSeq(id) {
+    document.querySelectorAll('.sequence').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+  function copyText(btn) {
+    const text = btn.previousElementSibling.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy Letter', 2000);
+    });
+  }
+</script>
+</body>
+</html>

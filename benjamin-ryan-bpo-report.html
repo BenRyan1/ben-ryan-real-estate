@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BPO Report — Benjamin Ryan | CA DRE #01005833</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Source Sans 3',sans-serif;background:#f4f1ec;color:#1a1a1a;font-size:15px;}
+  .page{max-width:900px;margin:0 auto;background:#fff;padding:48px;box-shadow:0 2px 24px rgba(0,0,0,0.08);}
+  .header{border-bottom:3px solid #b8952a;padding-bottom:24px;margin-bottom:32px;}
+  .header h1{font-family:'Playfair Display',serif;font-size:28px;color:#1a2340;letter-spacing:0.5px;}
+  .header .sub{color:#b8952a;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
+  .header .contact{margin-top:12px;font-size:13px;color:#555;}
+  .report-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:32px;}
+  .meta-box{background:#f4f1ec;padding:14px 16px;border-left:3px solid #b8952a;}
+  .meta-box label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#888;display:block;margin-bottom:4px;}
+  .meta-box input{border:none;background:transparent;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1a1a1a;width:100%;outline:none;}
+  .section-title{font-family:'Playfair Display',serif;font-size:16px;color:#1a2340;border-bottom:1px solid #ddd;padding-bottom:8px;margin:28px 0 16px;}
+  .property-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .field{margin-bottom:14px;}
+  .field label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#888;display:block;margin-bottom:4px;}
+  .field input,.field select,.field textarea{width:100%;border:1px solid #ddd;padding:8px 10px;font-family:'Source Sans 3',sans-serif;font-size:14px;color:#1a1a1a;background:#fafafa;border-radius:2px;outline:none;}
+  .field textarea{height:80px;resize:vertical;}
+  .comp-table{width:100%;border-collapse:collapse;margin-top:8px;}
+  .comp-table th{background:#1a2340;color:#fff;padding:10px 12px;text-align:left;font-size:12px;font-weight:600;letter-spacing:0.5px;}
+  .comp-table td{padding:9px 12px;border-bottom:1px solid #eee;font-size:13px;}
+  .comp-table td input{border:none;background:transparent;font-family:'Source Sans 3',sans-serif;font-size:13px;width:100%;outline:none;}
+  .comp-table tr:nth-child(even) td{background:#fafafa;}
+  .value-box{background:#1a2340;color:#fff;padding:24px 32px;margin:28px 0;display:flex;justify-content:space-between;align-items:center;}
+  .value-box .label{font-size:13px;letter-spacing:1px;text-transform:uppercase;opacity:0.7;}
+  .value-box .amount{font-family:'Playfair Display',serif;font-size:36px;color:#b8952a;}
+  .value-box input{background:transparent;border:none;border-bottom:1px solid rgba(184,149,42,0.4);color:#b8952a;font-family:'Playfair Display',serif;font-size:36px;width:220px;text-align:right;outline:none;}
+  .remarks{width:100%;border:1px solid #ddd;padding:12px;font-family:'Source Sans 3',sans-serif;font-size:14px;height:120px;resize:vertical;background:#fafafa;}
+  .btn-row{display:flex;gap:12px;margin-top:32px;}
+  .btn{padding:12px 28px;font-family:'Source Sans 3',sans-serif;font-size:14px;font-weight:600;cursor:pointer;border:none;border-radius:2px;letter-spacing:0.5px;}
+  .btn-primary{background:#b8952a;color:#fff;}
+  .btn-secondary{background:#1a2340;color:#fff;}
+  .btn-outline{background:transparent;border:2px solid #1a2340;color:#1a2340;}
+  .footer{margin-top:40px;padding-top:20px;border-top:1px solid #ddd;font-size:11px;color:#999;text-align:center;}
+  .report-number{font-size:11px;color:#888;text-align:right;margin-bottom:8px;}
+  @media print{
+    body{background:#fff;}
+    .page{box-shadow:none;padding:24px;}
+    .btn-row{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="report-number" id="reportNum"></div>
+  <div class="header">
+    <h1>Broker Price Opinion</h1>
+    <div class="sub">Benjamin Ryan · California Real Estate Broker</div>
+    <div class="contact">CA DRE #01005833 &nbsp;|&nbsp; (805) 886-4092 &nbsp;|&nbsp; benryanrealestate@gmail.com &nbsp;|&nbsp; 1187 Coast Village Rd. #110, Santa Barbara, CA 93108</div>
+  </div>
+
+  <div class="report-meta">
+    <div class="meta-box">
+      <label>Report Date</label>
+      <input type="text" id="reportDate">
+    </div>
+    <div class="meta-box">
+      <label>Report Type</label>
+      <select style="border:none;background:transparent;font-family:'Source Sans 3',sans-serif;font-size:14px;width:100%;outline:none;">
+        <option>Interior BPO</option>
+        <option>Exterior BPO</option>
+        <option>Drive-By BPO</option>
+        <option>REO Valuation</option>
+      </select>
+    </div>
+    <div class="meta-box">
+      <label>Client / Lender</label>
+      <input type="text" placeholder="Bank / Servicer name">
+    </div>
+  </div>
+
+  <div class="section-title">Subject Property</div>
+  <div class="property-grid">
+    <div class="field"><label>Property Address</label><input type="text" placeholder="Street address"></div>
+    <div class="field"><label>City / State / ZIP</label><input type="text" placeholder="Santa Barbara, CA 93108"></div>
+    <div class="field"><label>APN / Parcel Number</label><input type="text"></div>
+    <div class="field"><label>Property Type</label>
+      <select><option>Single Family Residence</option><option>Condo / Townhome</option><option>Multi-Family</option><option>Land</option><option>Commercial</option></select>
+    </div>
+    <div class="field"><label>Bedrooms</label><input type="number" placeholder="3"></div>
+    <div class="field"><label>Bathrooms</label><input type="number" step="0.5" placeholder="2"></div>
+    <div class="field"><label>Sq Ft (Living)</label><input type="number" placeholder="1,850"></div>
+    <div class="field"><label>Lot Size (Sq Ft)</label><input type="number" placeholder="6,500"></div>
+    <div class="field"><label>Year Built</label><input type="number" placeholder="1978"></div>
+    <div class="field"><label>Garage</label><select><option>2-Car Attached</option><option>1-Car Attached</option><option>2-Car Detached</option><option>None</option></select></div>
+    <div class="field"><label>Pool</label><select><option>No</option><option>Yes</option><option>Yes — Needs Repair</option></select></div>
+    <div class="field"><label>Overall Condition</label><select><option>Excellent</option><option>Good</option><option>Average</option><option>Fair</option><option>Poor</option></select></div>
+  </div>
+
+  <div class="section-title">Comparable Sales</div>
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Sold Date</th>
+        <th>Bed/Bath</th>
+        <th>Sq Ft</th>
+        <th>Sale Price</th>
+        <th>$/SqFt</th>
+        <th>Adj. Value</th>
+      </tr>
+    </thead>
+    <tbody id="compBody">
+      <tr><td><input placeholder="123 Comp St"></td><td><input type="date"></td><td><input placeholder="3/2"></td><td><input type="number" class="sqft" placeholder="1800"></td><td><input type="number" class="price" placeholder="950000" oninput="calcRow(this)"></td><td class="ppsf"></td><td><input type="number" class="adj" placeholder="950000"></td></tr>
+      <tr><td><input placeholder="456 Comp Ave"></td><td><input type="date"></td><td><input placeholder="3/2"></td><td><input type="number" class="sqft" placeholder="1900"></td><td><input type="number" class="price" placeholder="980000" oninput="calcRow(this)"></td><td class="ppsf"></td><td><input type="number" class="adj" placeholder="980000"></td></tr>
+      <tr><td><input placeholder="789 Comp Blvd"></td><td><input type="date"></td><td><input placeholder="3/2"></td><td><input type="number" class="sqft" placeholder="1750"></td><td><input type="number" class="price" placeholder="920000" oninput="calcRow(this)"></td><td class="ppsf"></td><td><input type="number" class="adj" placeholder="920000"></td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-title">Active Listings (Competitive)</div>
+  <table class="comp-table">
+    <thead>
+      <tr><th>Address</th><th>List Date</th><th>Bed/Bath</th><th>Sq Ft</th><th>List Price</th><th>$/SqFt</th><th>DOM</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><input placeholder="Active comp 1"></td><td><input type="date"></td><td><input placeholder="3/2"></td><td><input type="number"></td><td><input type="number" oninput="calcRow(this)"></td><td class="ppsf"></td><td><input type="number" placeholder="0"></td></tr>
+      <tr><td><input placeholder="Active comp 2"></td><td><input type="date"></td><td><input placeholder="3/2"></td><td><input type="number"></td><td><input type="number" oninput="calcRow(this)"></td><td class="ppsf"></td><td><input type="number" placeholder="0"></td></tr>
+    </tbody>
+  </table>
+
+  <div class="value-box">
+    <div>
+      <div class="label">Estimated Market Value</div>
+      <div style="font-size:12px;opacity:0.6;margin-top:4px;">As-Is · Subject to interior inspection</div>
+    </div>
+    <div>
+      <input type="text" id="finalValue" placeholder="$950,000" oninput="formatValue(this)">
+    </div>
+  </div>
+
+  <div class="section-title">Broker Remarks</div>
+  <textarea class="remarks" placeholder="Market conditions, subject property notes, neighborhood trends, recommended listing price vs. quick-sale price, absorption rate..."></textarea>
+
+  <div class="field" style="margin-top:24px;">
+    <label>Recommended List Price (90-Day)</label>
+    <input type="text" placeholder="$965,000">
+  </div>
+  <div class="field">
+    <label>Recommended Quick-Sale Price (30-Day)</label>
+    <input type="text" placeholder="$920,000">
+  </div>
+  <div class="field">
+    <label>Estimated Days on Market</label>
+    <input type="text" placeholder="21–35 days">
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="calcAll()">Calculate Adjustments</button>
+    <button class="btn btn-secondary" onclick="window.print()">Print to PDF</button>
+    <button class="btn btn-outline" onclick="clearForm()">Clear Form</button>
+  </div>
+
+  <div class="footer">
+    Benjamin Ryan · CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com<br>
+    1187 Coast Village Rd. #110, Santa Barbara, CA 93108 · 35+ Years Santa Barbara &amp; Montecito
+  </div>
+</div>
+
+<script>
+  // Auto-set date and report number
+  const today = new Date();
+  document.getElementById('reportDate').value = today.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const rn = 'BPO-' + today.getFullYear() + '-' + String(Math.floor(Math.random()*900)+100);
+  document.getElementById('reportNum').textContent = 'Report No. ' + rn;
+
+  function calcRow(input) {
+    const row = input.closest('tr');
+    const price = parseFloat(input.value) || 0;
+    const sqftInput = row.querySelector('.sqft');
+    const sqft = sqftInput ? parseFloat(sqftInput.value) || 0 : 0;
+    const ppsfCell = row.querySelector('.ppsf');
+    if (ppsfCell && sqft > 0) {
+      ppsfCell.textContent = '$' + Math.round(price/sqft).toLocaleString();
+    }
+  }
+
+  function calcAll() {
+    const adjInputs = document.querySelectorAll('.adj');
+    let total = 0; let count = 0;
+    adjInputs.forEach(inp => {
+      const v = parseFloat(inp.value);
+      if (v > 0) { total += v; count++; }
+    });
+    if (count > 0) {
+      const avg = Math.round(total / count);
+      document.getElementById('finalValue').value = '$' + avg.toLocaleString();
+    }
+    // calc all $/sqft
+    document.querySelectorAll('.price').forEach(p => calcRow(p));
+  }
+
+  function formatValue(input) {
+    let v = input.value.replace(/[^0-9]/g,'');
+    if (v) input.value = '$' + parseInt(v).toLocaleString();
+  }
+
+  function clearForm() {
+    if (confirm('Clear all fields?')) {
+      document.querySelectorAll('input:not(#reportDate):not(#reportNum), textarea').forEach(el => el.value = '');
+      document.querySelectorAll('.ppsf').forEach(el => el.textContent = '');
+    }
+  }
+</script>
+</body>
+</html>

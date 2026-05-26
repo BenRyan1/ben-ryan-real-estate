@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attorney Referral Network — Benjamin Ryan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Source Sans 3',sans-serif;background:#f4f1ec;color:#1a1a1a;}
+  .header{background:#1a2340;color:#fff;padding:40px 48px;}
+  .header h1{font-family:'Playfair Display',serif;font-size:28px;margin-bottom:8px;}
+  .header p{opacity:0.7;font-size:13px;}
+  .gold{color:#b8952a;}
+  .container{max-width:1000px;margin:0 auto;padding:32px 24px;}
+  .controls{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap;align-items:center;}
+  .filter-btn{padding:8px 18px;border:2px solid #1a2340;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:2px;transition:all 0.2s;}
+  .filter-btn.active{background:#1a2340;color:#fff;}
+  .search{padding:9px 14px;border:1px solid #ddd;font-size:13px;font-family:'Source Sans 3',sans-serif;width:240px;border-radius:2px;}
+  .export-btn{margin-left:auto;padding:9px 20px;background:#b8952a;color:#fff;border:none;cursor:pointer;font-size:13px;font-weight:600;border-radius:2px;}
+  table{width:100%;border-collapse:collapse;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+  th{background:#1a2340;color:#fff;padding:12px 16px;text-align:left;font-size:12px;font-weight:600;letter-spacing:0.5px;cursor:pointer;}
+  th:hover{background:#243060;}
+  td{padding:12px 16px;border-bottom:1px solid #eee;font-size:13px;vertical-align:top;}
+  tr:hover td{background:#faf9f6;}
+  .type-badge{display:inline-block;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:600;letter-spacing:0.5px;}
+  .badge-probate{background:#e8f4e8;color:#2d6a2d;}
+  .badge-divorce{background:#fff0e8;color:#8b4000;}
+  .badge-foreclosure{background:#fde8e8;color:#8b0000;}
+  .badge-estate{background:#e8e8f8;color:#1a2340;}
+  .status{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px;}
+  .status-warm{background:#f0a500;}
+  .status-active{background:#22aa44;}
+  .status-cold{background:#aaa;}
+  .notes-input{border:none;background:transparent;font-family:'Source Sans 3',sans-serif;font-size:12px;color:#555;width:100%;outline:none;}
+  .notes-input:focus{background:#fff8e7;}
+  .footer{text-align:center;padding:20px;font-size:11px;color:#999;margin-top:24px;}
+  .script-panel{background:#fff;padding:24px 32px;margin-bottom:24px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
+  .script-panel h2{font-family:'Playfair Display',serif;font-size:18px;color:#1a2340;margin-bottom:16px;}
+  .script{background:#f4f1ec;padding:16px 20px;font-size:13px;line-height:1.8;margin-bottom:12px;border-left:3px solid #b8952a;}
+  .script-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#b8952a;font-weight:600;margin-bottom:8px;}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Attorney Referral <span class="gold">Network</span></h1>
+  <p>Benjamin Ryan · CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com</p>
+</div>
+<div class="container">
+
+  <div class="script-panel">
+    <h2>Referral Scripts</h2>
+    <div class="script-label">Cold Outreach Email — Subject: Real Estate Resource for Your Clients</div>
+    <div class="script">Dear [Attorney Name],
+
+I am Benjamin Ryan, a California Real Estate Broker with 35+ years in Santa Barbara and Montecito (CA DRE #01005833). I specialize in estate, dissolution, and distressed property transactions — the exact situations your clients often need real estate guidance for.
+
+I offer your clients:
+• Complimentary BPO for probate court filings and settlement negotiations
+• Off-market sale options — no public exposure, faster close
+• Coordination directly with your office to streamline the process
+
+I would welcome the opportunity to be a resource for your practice. May I send over a brief one-page overview?
+
+Benjamin Ryan · (805) 886-4092 · benryanrealestate@gmail.com</div>
+
+    <div class="script-label">Phone Introduction Script</div>
+    <div class="script">"Hello, may I speak with [Attorney Name]? This is Benjamin Ryan — I'm a real estate broker here in Santa Barbara, DRE #01005833. I specialize in estate and dissolution property matters and I'm reaching out to introduce myself as a resource for your clients. Do you have 2 minutes? I'll be brief."</div>
+
+    <div class="script-label">After Referral Thank You</div>
+    <div class="script">"[Attorney Name], thank you for referring [client]. I will treat them with the same professionalism you bring to your practice and will keep you informed as appropriate. I'll follow up after our first meeting."</div>
+  </div>
+
+  <div class="controls">
+    <button class="filter-btn active" onclick="filterTable('all', this)">All</button>
+    <button class="filter-btn" onclick="filterTable('Probate', this)">Probate</button>
+    <button class="filter-btn" onclick="filterTable('Divorce', this)">Divorce</button>
+    <button class="filter-btn" onclick="filterTable('Estate', this)">Estate</button>
+    <button class="filter-btn" onclick="filterTable('Foreclosure', this)">Foreclosure</button>
+    <input type="text" class="search" placeholder="Search attorneys..." oninput="searchTable(this.value)">
+    <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+  </div>
+
+  <table id="attorneyTable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Status</th>
+        <th onclick="sortTable(1)">Attorney</th>
+        <th onclick="sortTable(2)">Firm</th>
+        <th onclick="sortTable(3)">Specialty</th>
+        <th onclick="sortTable(4)">Phone</th>
+        <th onclick="sortTable(5)">Email</th>
+        <th>Last Contact</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-type="Probate">
+        <td><span class="status status-warm"></span>Warm</td>
+        <td><strong>Add Attorney Name</strong></td>
+        <td>Add Firm</td>
+        <td><span class="type-badge badge-probate">Probate</span></td>
+        <td>(805) 000-0000</td>
+        <td>email@firm.com</td>
+        <td><input class="notes-input" type="date"></td>
+        <td><input class="notes-input" placeholder="Add notes..."></td>
+      </tr>
+      <tr data-type="Divorce">
+        <td><span class="status status-cold"></span>Cold</td>
+        <td><strong>Add Attorney Name</strong></td>
+        <td>Add Firm</td>
+        <td><span class="type-badge badge-divorce">Divorce</span></td>
+        <td>(805) 000-0000</td>
+        <td>email@firm.com</td>
+        <td><input class="notes-input" type="date"></td>
+        <td><input class="notes-input" placeholder="Add notes..."></td>
+      </tr>
+      <tr data-type="Estate">
+        <td><span class="status status-active"></span>Active</td>
+        <td><strong>Add Attorney Name</strong></td>
+        <td>Add Firm</td>
+        <td><span class="type-badge badge-estate">Estate</span></td>
+        <td>(805) 000-0000</td>
+        <td>email@firm.com</td>
+        <td><input class="notes-input" type="date"></td>
+        <td><input class="notes-input" placeholder="Add notes..."></td>
+      </tr>
+      <tr data-type="Foreclosure">
+        <td><span class="status status-warm"></span>Warm</td>
+        <td><strong>Add Attorney Name</strong></td>
+        <td>Add Firm</td>
+        <td><span class="type-badge badge-foreclosure">Foreclosure</span></td>
+        <td>(805) 000-0000</td>
+        <td>email@firm.com</td>
+        <td><input class="notes-input" type="date"></td>
+        <td><input class="notes-input" placeholder="Add notes..."></td>
+      </tr>
+      <tr data-type="Probate">
+        <td><span class="status status-cold"></span>Cold</td>
+        <td><strong>Add Attorney Name</strong></td>
+        <td>Add Firm</td>
+        <td><span class="type-badge badge-probate">Probate</span></td>
+        <td>(805) 000-0000</td>
+        <td>email@firm.com</td>
+        <td><input class="notes-input" type="date"></td>
+        <td><input class="notes-input" placeholder="Add notes..."></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:16px;font-size:12px;color:#888;">Click any Notes field to edit. Changes are session-only — export to CSV to save.</div>
+  <div class="footer">Benjamin Ryan · CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com</div>
+</div>
+
+<script>
+  function filterTable(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#attorneyTable tbody tr').forEach(row => {
+      row.style.display = (type === 'all' || row.dataset.type === type) ? '' : 'none';
+    });
+  }
+  function searchTable(q) {
+    q = q.toLowerCase();
+    document.querySelectorAll('#attorneyTable tbody tr').forEach(row => {
+      row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+  }
+  function exportCSV() {
+    let csv = 'Status,Attorney,Firm,Specialty,Phone,Email,Last Contact,Notes\n';
+    document.querySelectorAll('#attorneyTable tbody tr').forEach(row => {
+      const cells = row.querySelectorAll('td');
+      const vals = Array.from(cells).map(c => '"' + c.textContent.trim().replace(/"/g,'""') + '"');
+      csv += vals.join(',') + '\n';
+    });
+    const blob = new Blob([csv], {type:'text/csv'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'ben-ryan-attorney-referrals.csv';
+    a.click();
+  }
+</script>
+</body>
+</html>

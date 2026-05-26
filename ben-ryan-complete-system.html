@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete System — Benjamin Ryan Real Estate</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Source Sans 3',sans-serif;background:#f4f1ec;color:#1a1a1a;}
+  .header{background:#1a2340;color:#fff;padding:48px;text-align:center;}
+  .header h1{font-family:'Playfair Display',serif;font-size:36px;margin-bottom:12px;}
+  .header .gold{color:#b8952a;}
+  .header p{opacity:0.7;font-size:14px;letter-spacing:1px;}
+  .container{max-width:1000px;margin:0 auto;padding:48px 24px;}
+  .system-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px;}
+  .system-card{background:#fff;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,0.06);border-top:4px solid #b8952a;}
+  .system-card h2{font-family:'Playfair Display',serif;font-size:20px;color:#1a2340;margin-bottom:8px;}
+  .system-card p{font-size:13px;color:#666;line-height:1.7;margin-bottom:20px;}
+  .system-card a{display:inline-block;padding:10px 22px;background:#1a2340;color:#fff;text-decoration:none;font-size:13px;font-weight:600;border-radius:2px;}
+  .system-card a:hover{background:#b8952a;}
+  .one-pager{background:#fff;padding:48px;box-shadow:0 2px 12px rgba(0,0,0,0.06);margin-bottom:32px;}
+  .one-pager h2{font-family:'Playfair Display',serif;font-size:26px;color:#1a2340;border-bottom:2px solid #b8952a;padding-bottom:16px;margin-bottom:28px;}
+  .service-row{display:flex;gap:24px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #eee;}
+  .service-icon{font-size:28px;flex-shrink:0;width:48px;text-align:center;}
+  .service-title{font-weight:600;font-size:15px;color:#1a2340;margin-bottom:4px;}
+  .service-desc{font-size:13px;color:#666;line-height:1.6;}
+  .value-props{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:28px 0;}
+  .vp{text-align:center;padding:20px;background:#f4f1ec;}
+  .vp .num{font-family:'Playfair Display',serif;font-size:32px;color:#b8952a;}
+  .vp .label{font-size:12px;color:#888;margin-top:4px;text-transform:uppercase;letter-spacing:1px;}
+  .cta-box{background:#1a2340;color:#fff;padding:32px 40px;text-align:center;margin-top:32px;}
+  .cta-box h3{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:8px;}
+  .cta-box p{opacity:0.7;font-size:13px;margin-bottom:20px;}
+  .cta-box a{display:inline-block;padding:12px 32px;background:#b8952a;color:#fff;text-decoration:none;font-weight:600;font-size:14px;border-radius:2px;}
+  .section-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#b8952a;font-weight:600;margin-bottom:16px;}
+  @media(max-width:640px){.system-grid{grid-template-columns:1fr;}.value-props{grid-template-columns:1fr;}.service-row{flex-direction:column;}}
+  @media print{.system-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Benjamin Ryan <span class="gold">Real Estate</span></h1>
+  <p>CALIFORNIA BROKER · DRE #01005833 · SANTA BARBARA &amp; MONTECITO · 35+ YEARS</p>
+</div>
+
+<div class="container">
+
+  <!-- ONE-PAGER -->
+  <div class="one-pager">
+    <div class="section-label">Attorney &amp; Professional One-Pager</div>
+    <h2>A Trusted Resource for Your Clients' Real Property Needs</h2>
+
+    <div class="value-props">
+      <div class="vp"><div class="num">35+</div><div class="label">Years in Santa Barbara</div></div>
+      <div class="vp"><div class="num">CA</div><div class="label">DRE #01005833</div></div>
+      <div class="vp"><div class="num">100%</div><div class="label">Confidential Process</div></div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-icon">⚖️</div>
+      <div>
+        <div class="service-title">Probate &amp; Estate Properties</div>
+        <div class="service-desc">Court-admissible Broker Price Opinions for probate filings. Discreet handling of estate properties — often off-market, protecting family privacy. I coordinate directly with your office and the administrator throughout the process.</div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-icon">🏛️</div>
+      <div>
+        <div class="service-title">Marital Dissolution</div>
+        <div class="service-desc">Neutral BPO valuations accepted for settlement and court purposes. I work professionally with both parties and both counsels. My goal is an accurate valuation and a clean close — not to take sides.</div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-icon">🔒</div>
+      <div>
+        <div class="service-title">Off-Market &amp; Private Sales</div>
+        <div class="service-desc">Access to qualified buyers who prefer private transactions. No public listings, no open houses, no public record of the marketing process. Ideal for high-profile clients or sensitive family situations.</div>
+      </div>
+    </div>
+
+    <div class="service-row">
+      <div class="service-icon">📋</div>
+      <div>
+        <div class="service-title">Pre-Foreclosure &amp; Distressed</div>
+        <div class="service-desc">I help homeowners facing NOD or trustee sale dates understand their options and, when possible, sell before foreclosure to preserve equity. Time-sensitive situations handled with urgency and compassion.</div>
+      </div>
+    </div>
+
+    <div class="service-row" style="border-bottom:none;">
+      <div class="service-icon">📊</div>
+      <div>
+        <div class="service-title">Broker Price Opinions (BPO)</div>
+        <div class="service-desc">Professional BPOs for lenders, servicers, courts, and private parties. Interior and exterior formats. 24–48 hour turnaround. Court-admissible format with full comparable analysis and adjustment methodology.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;padding:20px 24px;background:#f4f1ec;border-left:4px solid #b8952a;">
+      <strong>Contact Benjamin Ryan directly:</strong><br>
+      <span style="font-size:14px;color:#555;">(805) 886-4092 &nbsp;|&nbsp; benryanrealestate@gmail.com &nbsp;|&nbsp; 1187 Coast Village Rd. #110, Santa Barbara, CA 93108</span>
+    </div>
+  </div>
+
+  <!-- TOOLS GRID -->
+  <div class="section-label">System Tools</div>
+  <div class="system-grid">
+    <div class="system-card">
+      <h2>BPO Report Tool</h2>
+      <p>Professional Broker Price Opinion form with auto-calculating comparables, adjustments, and final value. Print-ready for court filings and lender submissions.</p>
+      <a href="benjamin-ryan-bpo-report.html">Open BPO Tool →</a>
+    </div>
+    <div class="system-card">
+      <h2>Distressed Outreach System</h2>
+      <p>21-touch letter and call sequences for probate, divorce, and pre-foreclosure prospects. Copy-ready letters with personalization prompts.</p>
+      <a href="ben-ryan-distressed-outreach-system.html">Open Outreach System →</a>
+    </div>
+    <div class="system-card">
+      <h2>Attorney Referral Network</h2>
+      <p>Track your attorney relationships, outreach status, and referral pipeline. Includes introduction scripts and a CSV export for your CRM.</p>
+      <a href="ben-ryan-attorney-referral-list.html">Open Referral Tracker →</a>
+    </div>
+    <div class="system-card">
+      <h2>BPO Order Form</h2>
+      <p>Intake form for banks, servicers, and asset managers to submit BPO requests directly. Routes to your email automatically.</p>
+      <a href="bpo-order.html">Open Order Form →</a>
+    </div>
+  </div>
+
+  <!-- SEO PAGES SECTION -->
+  <div class="one-pager">
+    <div class="section-label">SEO Content — Santa Barbara Real Estate</div>
+    <h2>Market Expertise</h2>
+    <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:20px;">
+      Benjamin Ryan has represented buyers, sellers, estates, and institutions in the Santa Barbara and Montecito real estate market since 1988. With a career spanning more than three decades on the California Riviera, he brings unmatched local knowledge to every transaction — from coastal estates and hillside homes to distressed properties requiring discreet handling.
+    </p>
+    <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:20px;">
+      The Santa Barbara corridor — from Hope Ranch to Carpinteria — remains one of the most sought-after real estate markets in California, consistently attracting discerning buyers from Los Angeles, the Bay Area, and beyond. Benjamin Ryan's relationships with attorneys, fiduciaries, and financial professionals position him uniquely to serve clients navigating complex transactions.
+    </p>
+    <p style="font-size:14px;color:#555;line-height:1.8;">
+      Whether you are an estate administrator needing a court-ready valuation, a family law attorney seeking a neutral BPO, a lender requiring a professional Broker Price Opinion, or a homeowner exploring private sale options — Benjamin Ryan offers the experience, discretion, and market knowledge to guide you through the process with confidence.
+    </p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Ready to work together?</h3>
+    <p>No obligation. No pressure. Just honest counsel from a broker who knows this market.</p>
+    <a href="tel:8058864092">(805) 886-4092</a>
+  </div>
+
+</div>
+
+<div style="text-align:center;padding:20px;font-size:11px;color:#999;">
+  Benjamin Ryan · CA DRE #01005833 · (805) 886-4092 · benryanrealestate@gmail.com · 1187 Coast Village Rd. #110, Santa Barbara, CA 93108
+</div>
+</body>
+</html>
