@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Worker Test — KCM</title>
+<style>
+  body { font-family: monospace; background: #0d1f35; color: #E8E8E8; padding: 2rem; }
+  h2 { color: #F4D03F; margin-bottom: 1rem; }
+  input { padding: 0.6rem 1rem; width: 300px; border-radius: 6px; border: none; font-size: 1rem; }
+  button { padding: 0.6rem 1.4rem; background: #F4D03F; color: #0d1f35; font-weight: bold;
+           border: none; border-radius: 6px; cursor: pointer; margin-left: 0.5rem; font-size: 1rem; }
+  #result { margin-top: 1.5rem; background: #1a2f45; padding: 1rem; border-radius: 8px;
+            min-height: 60px; white-space: pre-wrap; font-size: 0.9rem; }
+  .ok  { color: #00ff88; }
+  .err { color: #ff6b6b; }
+</style>
+</head>
+<body>
+<h2>🔧 Worker Test — snowy-rain-84a5</h2>
+<p style="color:#A0B4C8; margin-bottom:1rem;">Tests the Worker directly. Enter any email and click Send.</p>
+
+<input type="email" id="email" placeholder="test@example.com" value="test@example.com" />
+<button onclick="runTest()">Send Test</button>
+
+<div id="result">Result will appear here...</div>
+
+<script>
+async function runTest() {
+  const email = document.getElementById('email').value.trim();
+  const result = document.getElementById('result');
+  result.textContent = 'Sending...';
+  result.className = '';
+
+  try {
+    const res = await fetch('https://snowy-rain-84a5.ben-03b.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+
+    const data = await res.json();
+    result.textContent = 'HTTP Status: ' + res.status + '\n\n' + JSON.stringify(data, null, 2);
+    result.className = data.ok ? 'ok' : 'err';
+  } catch (err) {
+    result.textContent = '❌ Network error: ' + err.message;
+    result.className = 'err';
+  }
+}
+</script>
+</body>
+</html>
