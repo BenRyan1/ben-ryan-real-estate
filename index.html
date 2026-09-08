@@ -199,7 +199,7 @@ footer a:hover{color:var(--gold);}
         <span class="contact-label">Phone</span>
         <div class="contact-value"><a href="tel:8055658900">805-565-8900</a></div>
         <span class="contact-label">Email</span>
-        <div class="contact-value"><a href="mailto:BenRyanRealEstate@gmail.com">BenRyanRealEstate@gmail.com</a></div>
+        <div class="contact-value"><a href="mailto:ben@benryanrealestate.com">ben@benryanrealestate.com</a></div>
         <span class="contact-label">License</span>
         <div class="contact-value">CA DRE #01005833</div>
       </div>
@@ -232,7 +232,7 @@ footer a:hover{color:var(--gold);}
 
 <footer>
   <p>© 2026 Ben Ryan Real Estate Services · Benjamin Ryan, California Licensed Broker · DRE #01005833<br>
-  1187 Coast Village Rd #110, Santa Barbara CA 93108 · <a href="tel:8055658900">805-565-8900</a> · <a href="mailto:BenRyanRealEstate@gmail.com">BenRyanRealEstate@gmail.com</a><br>
+  1187 Coast Village Rd #110, Santa Barbara CA 93108 · <a href="tel:8055658900">805-565-8900</a> · <a href="mailto:ben@benryanrealestate.com">ben@benryanrealestate.com</a><br>
   <a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms of Use</a></p>
 </footer>
 
@@ -247,7 +247,7 @@ document.getElementById('contactForm').addEventListener('submit',async function(
     const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
     if(r.ok){status.style.color='var(--gold)';status.textContent='✓ Message sent. Ben will be in touch shortly.';this.reset();}
     else{throw new Error();}
-  }catch{status.style.color='#e07070';status.textContent='Something went wrong. Please email BenRyanRealEstate@gmail.com directly.';}
+  }catch{status.style.color='#e07070';status.textContent='Something went wrong. Please email ben@benryanrealestate.com directly.';}
   btn.disabled=false;btn.textContent='Send Message';
 });
 </script>
