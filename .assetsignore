@@ -1,0 +1,6 @@
+.git/
+.git
+.wrangler/
+.DS_Store
+*.log
+node_modules/
