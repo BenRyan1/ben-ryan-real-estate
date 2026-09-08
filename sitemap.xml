@@ -12,6 +12,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Market Insight -->
+  <url>
+    <loc>https://benryanrealestate.com/market-insight.html</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- BPO Order Page — highest value for bank/AMC discovery -->
   <url>
     <loc>https://benryanrealestate.com/bpo-order.html</loc>
