@@ -9,9 +9,18 @@
  * 3. Settings → Variables → Add:
  *      MAILERLITE_API_KEY   = your MailerLite API key
  *      MAILERLITE_GROUP_ID  = group ID for BPO leads (create a new group: "BPO Orders")
- *      NOTIFY_EMAIL         = ben@benryanrealestate.com
+ *      NOTIFY_EMAIL         = BenRyanRealEstate@gmail.com (confirmed working —
+ *                             switch to ben@benryanrealestate.com only once
+ *                             Google Workspace for that domain is confirmed
+ *                             receiving mail; see FALLBACK_EMAIL note below)
  * 4. Route: benryanrealestate.com/api/bpo-order
+ *
+ * SAFETY NET (2026-09-08): if NOTIFY_EMAIL is ever unset or misconfigured,
+ * this code now falls back to the confirmed-working Gmail address below
+ * instead of silently failing, so a BPO order is never lost.
  */
+
+const FALLBACK_EMAIL = 'BenRyanRealEstate@gmail.com';
 
 const CORS = {
   'Access-Control-Allow-Origin': '*',
@@ -114,7 +123,7 @@ Reply-To is set to the ordering party's email.
     },
     body: JSON.stringify({
       from: { email: 'orders@benryanrealestate.com', name: 'Ben Ryan RE — BPO Orders' },
-      to: [{ email: env.NOTIFY_EMAIL, name: 'Ben Ryan' }],
+      to: [{ email: env.NOTIFY_EMAIL || FALLBACK_EMAIL, name: 'Ben Ryan' }],
       reply_to: { email: d.email, name: `${d.firstName} ${d.lastName}` },
       subject: `[BPO ORDER] ${d.address}, ${d.city} — ${d.bpoType} — Ref ${d.ref}`,
       text: emailText

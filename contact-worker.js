@@ -9,9 +9,18 @@
  * 3. Add Environment Variables (Settings → Variables):
  *      MAILERLITE_API_KEY  = your MailerLite API key
  *      MAILERLITE_GROUP_ID = your MailerLite group/segment ID for RE leads
- *      NOTIFY_EMAIL        = ben@benryanrealestate.com (your notification address)
+ *      NOTIFY_EMAIL        = BenRyanRealEstate@gmail.com (confirmed working —
+ *                            switch to ben@benryanrealestate.com only once
+ *                            Google Workspace for that domain is confirmed
+ *                            receiving mail; see FALLBACK_EMAIL note below)
  * 4. Add route: benryanrealestate.com/api/contact
+ *
+ * SAFETY NET (2026-09-08): if NOTIFY_EMAIL is ever unset or misconfigured,
+ * this code now falls back to the confirmed-working Gmail address below
+ * instead of silently failing, so a lead notification is never lost.
  */
+
+const FALLBACK_EMAIL = 'BenRyanRealEstate@gmail.com';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -106,7 +115,7 @@ Reply directly to this email to respond to the lead.
         },
         body: JSON.stringify({
           from: { email: 'notifications@benryanrealestate.com', name: 'Ben Ryan RE Site' },
-          to: [{ email: env.NOTIFY_EMAIL }],
+          to: [{ email: env.NOTIFY_EMAIL || FALLBACK_EMAIL }],
           subject: `New Inquiry: ${service || 'General'} — ${name}`,
           text: emailBody,
           reply_to: { email }
