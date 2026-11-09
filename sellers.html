@@ -239,7 +239,7 @@ footer a:hover{color:var(--gold);}
           <input type="text" name="refcode" data-extra="Reference code" placeholder="Reference code from my letter (optional)" maxlength="16" autocapitalize="characters" autocomplete="off" />
           <textarea name="message" placeholder="Tell Ben a little about your situation (optional if you have a reference code)"></textarea>
           <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <label class="consent"><input type="checkbox" required /> <span>I agree to be contacted about my inquiry. See the <a href="/privacy-policy.html">Privacy Policy</a>.</span></label>
+          <label class="consent" style="cursor:pointer;font-size:15px"><input type="checkbox" id="consentBox" style="width:22px;height:22px;flex:none" /> <span>I agree to be contacted about my inquiry. See the <a href="/privacy-policy.html">Privacy Policy</a>.</span></label>
           <button type="submit" class="btn-primary" style="width:100%;cursor:pointer;border:none;font-family:'Montserrat',sans-serif">Send</button>
           <div id="form-status" style="font-size:.82rem;margin-top:.5rem;min-height:1.2rem;" role="status" aria-live="polite"></div>
         </form>
@@ -266,6 +266,7 @@ f.addEventListener('submit',async function(e){
   const status=document.getElementById('form-status');
   const btn=f.querySelector('button[type="submit"]');
   if(f.elements.website.value){status.textContent='Thank you.';return;}
+  if(!document.getElementById('consentBox').checked){status.style.color='#e07070';status.textContent='Please tick the box above to agree to be contacted, then press Send.';document.getElementById('consentBox').focus();return;}
   btn.disabled=true;btn.textContent='Sending\u2026';
   const lines=[];
   f.querySelectorAll('[data-extra]').forEach(function(el){if(el.value){lines.push(el.dataset.extra+': '+el.value);}});
