@@ -222,7 +222,7 @@ footer a:hover{color:var(--gold);}
           <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <label class="consent" style="cursor:pointer;font-size:15px"><input type="checkbox" id="consentBox" style="width:22px;height:22px;flex:none" /> <span>I agree to be contacted about my inquiry. See the <a href="/privacy-policy.html">Privacy Policy</a>.</span></label>
           <button type="submit" class="btn-primary" style="width:100%;cursor:pointer;border:none;font-family:'Montserrat',sans-serif">Send</button>
-          <div id="form-status" style="font-size:.82rem;margin-top:.5rem;min-height:1.2rem;" role="status" aria-live="polite"></div>
+          <div id="form-status" style="font-size:1.05rem;font-weight:600;margin-top:.9rem;min-height:1.4rem;" role="status" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -256,9 +256,9 @@ f.addEventListener('submit',async function(e){
   try{
     const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
     if(!r.ok){throw new Error();}
-    status.style.color='var(--gold)';status.textContent='\u2713 Received. Ben will reply personally, usually within one business day.';f.reset();
+    status.style.color='var(--gold)';status.textContent='\u2713 Received. Ben will reply personally, usually within one business day.';f.reset();status.scrollIntoView({behavior:'smooth',block:'center'});
     if(window.gtag){gtag('event','generate_lead',{lead_source:SOURCE});}
-  }catch(err){status.style.color='#e07070';status.textContent='Something went wrong. Please email ben@benryanrealestate.com or call 805-565-8900.';}
+  }catch(err){status.style.color='#e07070';status.scrollIntoView({behavior:'smooth',block:'center'});status.textContent='Something went wrong. Please email ben@benryanrealestate.com or call 805-565-8900.';}
   btn.disabled=false;btn.textContent='Send';
 });
 })();

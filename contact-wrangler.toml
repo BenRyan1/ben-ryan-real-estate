@@ -1,0 +1,18 @@
+# Contact form worker. Deploy with:  wrangler deploy -c contact-wrangler.toml
+# Secrets and plain variables (MAILERLITE_API_KEY, MAILERLITE_GROUP_ID, NOTIFY_EMAIL) live in the
+# Cloudflare dashboard and are kept on every deploy. Never put keys in this file.
+name = "tight-leaf-c5a9contact-worker"
+main = "contact-worker.js"
+compatibility_date = "2026-03-11"
+keep_vars = true
+preview_urls = false
+
+[[routes]]
+pattern = "benryanrealestate.com/api/contact"
+zone_name = "benryanrealestate.com"
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
