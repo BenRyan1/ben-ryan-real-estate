@@ -236,7 +236,8 @@ footer a:hover{color:var(--gold);}
             <option>Other</option>
           </select>
           <input type="text" name="area" data-extra="Area" placeholder="Neighborhood or city (optional)" />
-          <textarea name="message" placeholder="Tell Ben a little about your situation" required></textarea>
+          <input type="text" name="refcode" data-extra="Reference code" placeholder="Reference code from my letter (optional)" maxlength="16" autocapitalize="characters" autocomplete="off" />
+          <textarea name="message" placeholder="Tell Ben a little about your situation (optional if you have a reference code)"></textarea>
           <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <label class="consent"><input type="checkbox" required /> <span>I agree to be contacted about my inquiry. See the <a href="/privacy-policy.html">Privacy Policy</a>.</span></label>
           <button type="submit" class="btn-primary" style="width:100%;cursor:pointer;border:none;font-family:'Montserrat',sans-serif">Send</button>
@@ -257,8 +258,9 @@ footer a:hover{color:var(--gold);}
 </footer>
 <script>
 (function(){
-const SOURCE='seller-guide', SERVICE='Selling a Property (trust/estate guide)';
+const SERVICE='Selling a Property (trust/estate guide)';
 const f=document.getElementById('leadForm');
+try{const q=new URLSearchParams(location.search).get('ref');if(q&&f.elements.refcode){f.elements.refcode.value=q.slice(0,16).toUpperCase();}}catch(x){}
 f.addEventListener('submit',async function(e){
   e.preventDefault();
   const status=document.getElementById('form-status');
@@ -268,7 +270,11 @@ f.addEventListener('submit',async function(e){
   const lines=[];
   f.querySelectorAll('[data-extra]').forEach(function(el){if(el.value){lines.push(el.dataset.extra+': '+el.value);}});
   const phone=f.elements.phone.value;
-  const msg=['Phone: '+(phone||'not given')].concat(lines).join('\n')+'\n\n'+f.elements.message.value;
+  const code=(f.elements.refcode.value||'').trim();
+  const SOURCE=code?'seller-letter':'seller-guide';
+  const body=f.elements.message.value.trim()||(code?'Requested the free written estimate from my letter.':'');
+  if(!body){status.style.color='#e07070';status.textContent='Please add a short message.';btn.disabled=false;btn.textContent='Send';return;}
+  const msg=['Phone: '+(phone||'not given')].concat(lines).join('\n')+'\n\n'+body;
   const data={name:f.elements.name.value,email:f.elements.email.value,phone:phone,service:SERVICE,inquiry_type:SERVICE,source:SOURCE,message:msg.trim()};
   try{
     const r=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
