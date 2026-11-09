@@ -28,4 +28,20 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Sellers guide -->
+  <url>
+    <loc>https://benryanrealestate.com/sellers.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AI Desk for agents -->
+  <url>
+    <loc>https://benryanrealestate.com/ai-desk.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
